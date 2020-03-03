@@ -1,111 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='bootswatch/bootstrap.min.css'/>  
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  
-    <link rel='stylesheet' href='css/wallpaper.css'/>
-    <title>note</title>
-    <style>
-        .pop-outer {
-    background-color: rgba(204, 191, 191, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.pop-inner {
-    background-color: rgb(60, 221, 20);
-    width: 500px;
-    height: 300px;
-    padding: 25px;
-    margin: 15% auto;
-}
-    </style>
-    <script>
-        // function getCookie(cname) {
-        //     var name = cname + "=";
-        //     var decodedCookie = decodeURIComponent(document.cookie);
-        //      return decodedCookie;
-        // }
-        //  var user=getCookie("username");
-         //x = document.getElementById('username').innerHTML = username;
-    </script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='bootswatch/bootstrap.min.css'/>  
+        <link rel='stylesheet' href='css/wallpaper.css'/>
+        <title>note</title>
+        <script src="jquery/jquery.js"></script>    
+    </head>
 <body>
     <div class="alert alert-dismissible alert-success">
         Well done! Mr <strong id="username"></strong> You successfully logged in <u>please provid more information to get your result !</u>.
     </div>
-<div class="d-flex align-items-center ">
-<form class='container-xl w-75 p-4'>
-    <div class="form-group">
-      <label for="staticEmail"  class="col-sm-2 col-form-label">Nom</label>
-      <input type="text" class="form-control" id="username" placeholder="Nom">
+    <div class="d-flex align-items-center ">
+        <form class='container-xl w-75 p-4'>
+            <div class="form-group">
+                <label for="staticEmail"  class="col-sm-2 col-form-label">Nom</label>
+                <input type="text" class="form-control" id="Nom" placeholder="Nom">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Prenom</label>
+                <input type="text" class="form-control" id="Prenom" placeholder="prenom">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Maths</label>
+                <input type="number" class="form-control" id="Maths" placeholder="note de maths"  min="0" max="20">
+                <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Informatique</label>
+                <input type="number" class="form-control" id="Informatique" placeholder="note d'informatique"   min="0" max="20">
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Prenom</label>
-      <input type="password" class="form-control" id="password" placeholder="prenom">
+    <div class='container-xl w-75 p-4'>
+        <button id='annuler' class="alert alert-danger">Annuler</button>
+        <button name='connect' class="open alert alert-success" onclick='result()' >Resultat</button>
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Maths</label>
-      <input type="number" class="form-control" id="Maths" placeholder="note de maths">
-      <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Informatique</label>
-      <input type="number" class="form-control" id="Informatique" placeholder="note d'informatique">
+    <div style="display: none;" class="pop-outer ">
+        <div class="pop-inner bg-success text-white card text-white bg-primary mb-3">
+            <button class="close text-danger">X</button>
+            <ul class="list-group">
+                <li class=" list-group-item  d-flex justify-content-between align-items-center text-dark"><h4>
+                  NOM
+                    </h4><h5><span id="NOM"></span></h5>
+                </li>
+                <li class=" list-group-item d-flex justify-content-between align-items-center text-dark"><h4>
+                  PRENOM</h4>
+                  <h5><span  id="PRENOM"></span></h5>
+                </li>
+                <li class=" list-group-item d-flex justify-content-between align-items-center text-dark"><h4>
+                 MATH</h4>
+                 <h5><span  id="MATHS"></span></h5>
+                </li>
+                <li class=" list-group-item d-flex justify-content-between align-items-center text-dark"><h4>
+                INFORMATIQUE</h4>
+                 <h5><span  id="INFORMATIQUE"></span></h5>
+                </li>
+                <li class=" list-group-item d-flex justify-content-between align-items-center text-dark"><h4>
+                    RESULTAT
+                    </h4>
+                 <h5><span  id="RESULTAT"></span></h5>
+                </li>
+                <li class=" list-group-item d-flex justify-content-between align-items-center text-dark"><h4>
+                    MENTION
+                    </h4>
+                 <h5><span  id="MENTION"></span></h5>
+                </li>
+            </ul>
+        </div>
     </div>
-</form>
-</div>
-
-<div class='container-xl w-75 p-4'>
-    <button id='annuler' class="alert alert-danger">Annuler</button>
-    <button name='connect' class="open alert alert-success" onclick='result()' >Resultat</button>
-</div>
-<div style="display: none;" class="pop-outer ">
-    <div class="pop-inner bg-success text-white card text-white bg-primary mb-3">
-        <button class="close">X</button>
-        <h1 class="row h-100 justify-content-center align-items-center">Result</h1>
-        <h5 id='Msg' class="row h-100 justify-content-center align-items-center"></h5>
-    </div>
-</div>
 </body>
 <script>
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    } 
+    document.getElementById('username').innerHTML = getCookie('username'); ;
     function result(){
         var Maths = document.getElementById('Maths').value;
         var Informatique = document.getElementById('Informatique').value;
         Maths = parseInt(Maths,10);
         Informatique = parseInt(Informatique,10);
         result = (Maths + Informatique)/2;
-        if(result < 10){
-            document.getElementById('Msg').innerHTML = 'Ajournee';
-        }
-        else if(result >=10 && result <12 ){
-            document.getElementById('Msg').innerHTML = 'Passable';
+        document.getElementById('NOM').innerHTML = document.getElementById('Nom').value;;
+        document.getElementById('PRENOM').innerHTML = document.getElementById('Prenom').value;
+        if((Maths <= 20 && Maths >=0) && (Informatique <= 20 && Informatique >=0))
+        {
+            if(result < 10){
+                document.getElementById('MENTION').innerHTML = 'Ajournee';
+            }
+            else if(result >=10 && result <12 ){
+                document.getElementById('MENTION').innerHTML = 'Passable';
 
-        }
-        else if(result >=12 && result <14 ){
-            document.getElementById('Msg').innerHTML = 'Assez bien';
-        }
-        else if(result >=14 && result <16 ){
-            document.getElementById('Msg').innerHTML = 'Bien';
+            }
+            else if(result >=12 && result <14 ){
+                document.getElementById('MENTION').innerHTML = 'Assez bien';
+            }
+            else if(result >=14 && result <16 ){
+                document.getElementById('MENTION').innerHTML = 'Bien';
 
-        }
-        else if(result >=16 && result <20 ){
-            document.getElementById('Msg').innerHTML = 'Tres bien';
+            }
+            else if(result >=16 && result <20 ){
+                document.getElementById('MENTION').innerHTML = 'Tres bien';
 
-        }     
-        else document.getElementById('Msg').innerHTML = 'none';
+            }     
+            else document.getElementById('MENTION').innerHTML = 'none';
+        }
+        else{
+            document.getElementById('MENTION').innerHTML = 'Grade doesn\'t exist ! Please try again';
+        }
+        document.getElementById('MATHS').innerHTML = document.getElementById('Maths').value;
+        document.getElementById('INFORMATIQUE').innerHTML = document.getElementById('Informatique').value;
+        document.getElementById('RESULTAT').innerHTML = result;
     }
+    // $(".pop-outer").fadeIn("slow");
     $(document).ready(function (){
-                $(".open").click(function (){
-                    $(".pop-outer").fadeIn("slow");
-                });
-                $(".close").click(function (){
-                    $(".pop-outer").fadeOut("fast");
-                    location.reload();
-                });
-            });
-            
+        $(".open").click(function (){
+            $(".pop-outer").fadeIn("slow");
+
+        });
+        $(".close").click(function (){
+            $(".pop-outer").fadeOut("fast");
+            location.reload();
+        });
+    });     
+
 </script>
 </html>

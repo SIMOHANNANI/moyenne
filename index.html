@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='bootswatch/bootstrap.min.css'/>    
+    <link rel='stylesheet' href='bootswatch/bootstrap.min1.css'/>    
     <link rel='stylesheet' href='css/wallpaper.css'/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery/jquery.js"></script>
     <title>Login</title>
 </head>
 <body>
@@ -23,21 +23,36 @@
             <button type="button" id='annuler' class="btn btn-warning">Annuler</button>
             <button name='connect' type="button" class="btn btn-success" onclick="sub()">Valider</button>
     </form>
-    <div class="alert alert-dismissible alert-danger hideIt">please fill in all the blanks</div>
+    <div class="alert alert-dismissible alert-danger hideIt" id="err"></div>
   </div>
 </body>
 <script>
-function sub(){
+  function sub(){
+    function setCookie(cname, cvalue) {
+      document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+    }
+    var username1 = document.getElementById("username").value;
+    setCookie("username",username1);
+    
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    if(username != '' && password != ''){
-      window.location.href = 'note.html';
-    }
-    else{
-      $(document).ready(function(){
-        $(".alert").show();
-      });
-    }
-}
+      if(username != '' && password != ''){
+        window.location.href = 'note.html';
+      }
+      else{
+        if(username == '' && password != ''){
+          document.getElementById("err").innerHTML = 'Empty login';
+        }
+        else if(password == '' && username != ''){
+          document.getElementById("err").innerHTML = 'Empty password';
+        }
+        else{
+          document.getElementById("err").innerHTML = 'Please fill in all the fields';
+        }
+        $(document).ready(function(){
+          $(".alert").show();
+        });
+      }
+  }
 </script>
 </html>
