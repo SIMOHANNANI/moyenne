@@ -1,19 +1,10 @@
 body { 
-    background: url(../img/wallpaper.jpg) no-repeat center center fixed; 
+    background: url(../img/wallpaper.jpg) no-repeat center center fixed;  
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     
-}
-form,button{
-    opacity: 0.8;
-}
-html:hover form{
-    opacity: 1;
-}
-html:hover button{
-    opacity: 1;
 }
 img{
   background-color: transparent;
@@ -22,10 +13,7 @@ img{
 .hideIt{
     display: none;
 }
-input{
-    border:2px solid black
-}
-.pop-outer {
+/* .pop-outer {
     background-color: rgba(143, 143, 143, 0.822);
     position: fixed;
     top: 0;
@@ -39,4 +27,62 @@ input{
     height: 450px;
     padding: 25px;
     margin: 8% auto;
+} */
+.btn-outline-danger {
+    position: relative;
+    cursor: help;
+  }
+  .btn-outline-danger span {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    padding: .2em;
+    top: 2.3em;
+    left: 6.2em;
+    width: 10em;
+    color:rgb(0, 0, 0);
+    background-color: rgba(255, 0, 0, 0.4);
+    border-radius: 0.4em;
+
+  }
+  .btn-outline-danger:hover span {
+    display: inline-block;
+  }
+  .table
+  {
+    overflow: visible;
+  }
+
+  .btn-outline-primary {
+    position: relative;
+    cursor: help;
+  }
+  .btn-outline-primary span {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    padding: .2em;
+    top: 2.2em;
+    left: 6.6em;
+    width: 10em;
+    color:black;
+    background-color: rgba(93, 93, 195, 0.4);
+    border-radius: 0.4em;
+
+  }
+  .btn-outline-primary:hover span {
+    display: inline-block;
+  }
+  .table
+  {
+    overflow: visible;
+  }
+  .update {
+    padding-left: 30px;
+    min-width: 0;
+    width: 120px;
+}
+input[readonly]{
+  background-color:transparent;
+  border: 0;
 }
