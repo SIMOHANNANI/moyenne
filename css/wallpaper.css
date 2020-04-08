@@ -13,25 +13,13 @@ img{
 .hideIt{
     display: none;
 }
-/* .pop-outer {
-    background-color: rgba(143, 143, 143, 0.822);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.pop-inner {
-    background-color: rgb(255, 255, 255);
-    width: 620px;
-    height: 450px;
-    padding: 25px;
-    margin: 8% auto;
-} */
+
+/*----------------------------------------------------------------------------------*/
 .btn-outline-danger {
     position: relative;
     cursor: help;
   }
+
   .btn-outline-danger span {
     display: none;
     z-index: 100;
@@ -48,41 +36,113 @@ img{
   .btn-outline-danger:hover span {
     display: inline-block;
   }
-  .table
-  {
-    overflow: visible;
-  }
 
-  .btn-outline-primary {
-    position: relative;
-    cursor: help;
-  }
-  .btn-outline-primary span {
-    display: none;
-    z-index: 100;
-    position: absolute;
-    padding: .2em;
-    top: 2.2em;
-    left: 6.6em;
-    width: 10em;
-    color:black;
-    background-color: rgba(93, 93, 195, 0.4);
-    border-radius: 0.4em;
 
-  }
-  .btn-outline-primary:hover span {
-    display: inline-block;
-  }
-  .table
-  {
-    overflow: visible;
-  }
-  .update {
-    padding-left: 30px;
-    min-width: 0;
-    width: 120px;
+/*-----------------------------------------------------------------------------------*/
+
+.btn-outline-primary {
+  position: relative;
+  cursor: help;
+}
+.btn-outline-primary span {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  padding: .2em;
+  top: 2.2em;
+  left: 6.6em;
+  width: 10em;
+  color:black;
+  background-color: rgba(93, 93, 195, 0.4);
+  border-radius: 0.4em;
+  
+}
+.btn-outline-primary:hover span {
+  display: inline-block;
+}
+/*-----------------------------------------------------------------------------------*/
+.btn-outline-success {
+  position: relative;
+  cursor: help;
+}
+.btn-outline-success span {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  padding: .2em;
+  top: 2.3em;
+  left: 6.5em;
+  width: 10em;
+  color:rgb(0, 0, 0);
+  background-color: rgba(0, 255, 13, 0.534);
+  border-radius: 0.4em;
+  
+}
+.btn-outline-success:hover span {
+  display: inline-block;
+}
+/*----------------------------------------------------------------------------------*/
+.saveRecord {
+  position: relative;
+  cursor: help;
+}
+.saveRecord span {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  padding: .2em;
+  top: 2.3em;
+  left: 5em;
+  width: 10em;
+  color:rgb(0, 0, 0);
+  background-color: rgba(0, 255, 13, 0.534);
+  border-radius: 0.4em;
+  
+}
+.saveRecord:hover span {
+  display: inline-block;
+}
+/*----------------------------------------------------------------------------------*/
+.btn-outline-warning {
+  position: relative;
+  cursor: help;
+}
+.btn-outline-warning span {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  padding: .2em;
+  top: 2.3em;
+  left: 6.4em;
+  width: 10em;
+  color:rgb(0, 0, 0);
+  background-color: rgba(241, 237, 0, 0.609);
+  border-radius: 0.4em;
+  
+}
+.btn-outline-warning:hover span {
+  display: inline-block;
+}
+/*---------------------------------------------------------------------------------*/
+
+.table
+{
+  overflow: visible;
+}
+.update {
+  
+  width: 120px;
 }
 input[readonly]{
   background-color:transparent;
-  border: 0;
+  border:none;
+  text-align: center;
+  margin:auto;
 }
+.table
+{
+  overflow: visible;
+}
+.saveRecord, .cancel {
+  display:none;
+  }

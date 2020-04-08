@@ -13,7 +13,7 @@
     <title>Login</title>
 </head>
 <body>
-  <div class=" container  d-flex align-items-center min-vh-100 w-50 p-3">
+  <div class=" container-xl  d-flex align-items-center min-vh-100 w-50 p-3">
     <form class='container-xl w-75 p-4' method="POST" action="index.php" name="form">
 
 
