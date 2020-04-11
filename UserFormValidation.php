@@ -53,6 +53,7 @@
       {
         $GLOBALS['msg'] = 'loged in successfuly';
         $GLOBALS['class'] = 'alert-success';
+        $_SESSION['loginMessage'] = true;
         header('Location:note.php');
 
       }

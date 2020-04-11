@@ -15,42 +15,28 @@
 <body>
   <div class=" container-xl  d-flex align-items-center min-vh-100 w-50 p-3">
     <form class='container-xl w-75 p-4' method="POST" action="index.php" name="form">
-
-
         <div class="input-group input-group-lg border border-dark mb-3 rounded">
           <span>
              <i class="fa fa-user-graduate fa-2x mt-2 ml-2" aria-hidden="true"></i>
           </span>
-          <!-- <label for="staticEmail"  class="col-sm-2 col-form-label">login</label> -->
           <input type="text" class="form-control border-0 bg-transparent shadow-none font-weight-bold" id="username" placeholder="username" name = "username" value="<?php echo $_SESSION['username']?>">
         </div>
-
-
         <div class="input-group input-group-lg border border-dark mb-1 rounded">
           <span>
              <i class="fa fa-key fa-2x mt-2 ml-2" aria-hidden="true"></i>
           </span>
-          <!-- <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Password</label> -->
           <input type="password" class="form-control border-0 bg-transparent shadow-none font-weight-bold" id="password" placeholder="Password" name='password' value="<?php echo $_SESSION['password']?>">
         </div>
-
-
             <button type="button" id='cancel' class="btn btn-danger">Cancel</button>
             <button name='signin' type="submet" class="btn btn-success" name="signin">Sign in</button>
             <button name='signup' type="submet" class="btn btn-success signup" name="signup">Sign up</button>
             <?php if(FILTER_HAS_VAR(INPUT_POST,"signin") || FILTER_HAS_VAR(INPUT_POST,"signup")):?>
-                  <div class="container alert <?php echo $GLOBALS['class'];?>"><?php echo $GLOBALS['msg'] ;?></div>
+              <div class="container alert <?php echo $GLOBALS['class'];?>"><?php echo $GLOBALS['msg'] ;?></div>
             <?php endif ;?>
     </form>
-    
   </div>
 </body>
-<script>
-    $(document).ready(function(){
-      $('#cancel').click(function(){
-        $("[name='username']").val('');
-        $("[name='password']").val('');
-     });
-  });   
+<script src="jsHandler.js">
+    
 </script>
 </html>

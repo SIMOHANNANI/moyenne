@@ -5,13 +5,7 @@ function logout(){
 
 }
 if($_POST['logout']){
-    echo "ho";
     logout();
-
 }
-
-
-
-
 
 ?>

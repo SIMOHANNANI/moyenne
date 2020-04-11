@@ -1,5 +1,5 @@
 body { 
-    background: url(../img/wallpaper.jpg) no-repeat center center fixed;  
+    /* background: url(../img/wallpaper.jpg) no-repeat center center fixed;   */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -135,9 +135,10 @@ img{
 }
 input[readonly]{
   background-color:transparent;
+  border:0px;
   border:none;
   text-align: center;
-  margin:auto;
+  height: 35px;
 }
 .table
 {
@@ -145,4 +146,13 @@ input[readonly]{
 }
 .saveRecord, .cancel {
   display:none;
-  }
+}
+.New{
+  width: 120px;
+  text-align: center;
+  border:0px;
+  height: 35px;
+}
+.add:hover .fa-user-plus{
+  color:white;
+}
